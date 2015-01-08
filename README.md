@@ -1,6 +1,6 @@
 ###pypostalcode
 
-This is a fork of Nathan Van Gheem's excellent pyzipcode package.  The zipcode database has been replaced with Canadian cities and their postal codes.  The general usage is the same.
+This is a fork of Nathan Van Gheem's excellent pyzipcode package.  The zipcode database has been replaced with Canadian cities and their postal codes, included here in `ca_postalcodes.csv`. The general usage is the same.
         
 Canadian postal codes are six characters with this format: A1A 1A1, where A is a letter and 1 is a digit, with a space separating the third and fourth characters. The first three digits are the forward sortation area (FSA), and the last three are the local delivery unit (LDU).  
 
@@ -12,7 +12,7 @@ To use, run
 pip install pypostalcode
 ```
 
-Basic usage (copied from the pyzipcode docs):
+Basic usage:
 
 
 ```
