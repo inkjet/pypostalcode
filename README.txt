@@ -9,7 +9,7 @@ Introduction
 
         Basic usage (copied from the pyzipcode docs):
 
-	>>> from pyzipcode import PostalCodeDatabase
+	>>> from pypostalcode import PostalCodeDatabase
 	>>> pcdb = PostalCodeDatabase()
 	>>> location = pcdb['V5K']
 	>>> location.postalcode
@@ -28,7 +28,7 @@ Introduction
 
 Get a list of postal codes given a radius in kilometers:
 	
-	>>> from pyzipcode import PostalCodeDatabase
+	>>> from pypostalcode import PostalCodeDatabase
 	>>> pcdb = PostalCodeDatabase()
 	>>> results = pcdb.get_postalcodes_around_radius('T3Z', 25)
 	>>> for r in results:
