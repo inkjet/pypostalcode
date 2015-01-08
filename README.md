@@ -6,7 +6,7 @@ Canadian postal codes are six characters with this format: A1A 1A1, where A is a
 
 This module only uses the FSA designator for location. There are over 800,000 FSA+LDU combinations, but the 1,620 unique FSA values provide enough resolution for most applications.
 
-To use, run
+To install:
 
 ```
 pip install pypostalcode
