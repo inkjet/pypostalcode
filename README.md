@@ -18,7 +18,8 @@ Basic usage:
 ```
 	>>> from pypostalcode import PostalCodeDatabase
 	>>> pcdb = PostalCodeDatabase()
-	>>> location = pcdb['V5K']
+	>>> pc = 'V5K'
+	>>> location = pcdb[pc]
 	>>> location.postalcode
 	u'V5K'
 	>>> location.city
@@ -38,7 +39,9 @@ Get a list of postal codes given a radius in kilometers:
 ```	
 	>>> from pypostalcode import PostalCodeDatabase
 	>>> pcdb = PostalCodeDatabase()
-	>>> results = pcdb.get_postalcodes_around_radius('T3Z', 25)
+	>>> pc = 'T3Z'
+	>>> radius = 25
+	>>> results = pcdb.get_postalcodes_around_radius(pc, radius)
 	>>> for r in results:
 	>>>     ''.join([r.postalcode, ": ", r.city, ", ", r.province])
         u'T3B: Calgary (Montgomery / Bowness / Silver Springs / Greenwood), Alberta'
