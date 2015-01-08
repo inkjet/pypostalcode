@@ -6,7 +6,7 @@ version = '0.1'
 setup(name='pypostalcode',
       version=version,
       description="Radius searches on Canadian postal codes, location data",
-      long_description=open("README.txt").read() + '\n\n' + open('CHANGES.txt').read(),
+      long_description=open("README.txt").read() + '\n\n',
       classifiers=[], # Get strings from http://pypi.python.org/pypi?%3Aaction=list_classifiers
       keywords='Canada postal code code distance',
       author='Scott Rodkey',
