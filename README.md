@@ -44,7 +44,7 @@ Get a list of postal codes given a radius in kilometers:
 	>>> results = pcdb.get_postalcodes_around_radius(pc, radius)
 	>>> for r in results:
 	>>>     ''.join([r.postalcode, ": ", r.city, ", ", r.province])
-        u'T3B: Calgary (Montgomery / Bowness / Silver Springs / Greenwood), Alberta'
+      u'T3B: Calgary (Montgomery / Bowness / Silver Springs / Greenwood), Alberta'
 	u'T3G: Calgary (Hawkwood / Arbour Lake / Royal Oak / Rocky Ridge), Alberta'
 	u'T3H: Calgary (Discovery Ridge / Signal Hill / Aspen Woods / Patterson / Cougar Ridge), Alberta'
 	u'T3L: Calgary (Tuscany / Scenic Acres), Alberta'
