@@ -3,6 +3,10 @@ from pysqlite2 import dbapi2 as sqlite3
 import time
 from math import degrees, sin, asin, cos, radians
 
+'''
+© This data includes information copied with permission from Canada Post Corporation.
+'''
+
 class ConnectionManager(object):
     """
     Assumes a database that will work with cursor objects
