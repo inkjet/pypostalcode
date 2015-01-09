@@ -1,6 +1,6 @@
 ###pypostalcode
 
-This is a fork of Nathan Van Gheem's excellent pyzipcode package.  The zipcode database has been replaced with Canadian cities and their postal codes, retrieved from `https://www.aggdata.com/download_sample.php?file=ca_postal_codes.csv`. The general usage is the same.
+This is a fork of Nathan Van Gheem's excellent pyzipcode package.  The zipcode database has been replaced with Canadian cities and their postal codes, retrieved from 2011 census data from `http://www12.statcan.gc.ca/census-recensement/2011/geo/bound-limit/bound-limit-2011-eng.cfm`. The general usage is the same.
         
 Canadian postal codes are six characters with this format: A1A 1A1, where A is a letter and 1 is a digit, with a space separating the third and fourth characters. The first three digits are the forward sortation area (FSA), and the last three are the local delivery unit (LDU).  
 
@@ -52,3 +52,4 @@ Get a list of postal codes given a radius in kilometers:
 	u'T3Z: Redwood Meadows, Alberta'
 	u'T4C: Cochrane, Alberta'
 ```
+© This data includes information copied with permission from Canada Post Corporation.
