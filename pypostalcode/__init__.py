@@ -1,4 +1,4 @@
-from settings import db_location
+from .settings import db_location
 import sqlite3
 import time
 from math import degrees, sin, asin, cos, radians
