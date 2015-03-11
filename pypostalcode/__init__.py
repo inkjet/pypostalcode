@@ -1,10 +1,10 @@
 from settings import db_location
-from pysqlite2 import dbapi2 as sqlite3
+import sqlite3
 import time
 from math import degrees, sin, asin, cos, radians
 
 '''
-© This data includes information copied with permission from Canada Post Corporation.
+(c) This data includes information copied with permission from Canada Post Corporation.
 '''
 
 class ConnectionManager(object):
@@ -25,7 +25,7 @@ class ConnectionManager(object):
         # then just give up...
             try:
                 conn = sqlite3.connect(db_location)
-            except sqlite3.OperationalError, x:
+            except sqlite3.OperationalError:
                 retry_count += 1
                 time.sleep(0.001)
         
