@@ -28,9 +28,9 @@ Basic usage:
 	>>> location.province
 	u'British Columbia'
 	>>> location.longitude
-	49.293
-	>>> location.latitude
 	-123.0489
+	>>> location.latitude
+	49.293
 	>>> location.timezone
 	-8
 ```	
