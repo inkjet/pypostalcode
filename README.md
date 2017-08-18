@@ -1,4 +1,4 @@
-###pypostalcode
+### pypostalcode
 
 This is a fork of Nathan Van Gheem's excellent pyzipcode package.  The zipcode database has been replaced with Canadian cities and their postal codes. The general usage is the same.
         
