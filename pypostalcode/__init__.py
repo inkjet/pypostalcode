@@ -17,7 +17,7 @@ class ConnectionManager(object):
         conn = sqlite3.connect(db_location)
         conn.close()
             
-    def query(self, sql):
+    def query(self, sql, args=()):
         conn = None
         retry_count = 0
         while not conn and retry_count <= 10:
@@ -33,14 +33,14 @@ class ConnectionManager(object):
             raise sqlite3.OperationalError("Can't connect to sqlite database.")
                 
         cursor = conn.cursor()
-        cursor.execute(sql)
+        cursor.execute(sql, args)
         res = cursor.fetchall()
         conn.close()
         return res
 
-PC_QUERY = "SELECT * FROM PostalCodes WHERE fsa='%s'"
-PC_RANGE_QUERY = "SELECT * FROM PostalCodes WHERE longitude >= %s and longitude <= %s AND latitude >= %s and latitude <= %s"
-PC_FIND_QUERY = "SELECT * FROM PostalCodes WHERE city LIKE '%s' AND province LIKE '%s'"
+PC_QUERY = "SELECT * FROM PostalCodes WHERE fsa=?"
+PC_RANGE_QUERY = "SELECT * FROM PostalCodes WHERE longitude >= ? and longitude <= ? AND latitude >= ? and latitude <= ?"
+PC_FIND_QUERY = "SELECT * FROM PostalCodes WHERE city LIKE ? AND province LIKE ?"
 
 class PostalCode(object):
     def __init__(self, data):
@@ -93,7 +93,7 @@ class PostalCodeDatabase(object):
         
         long_range  = (pc.longitude - lat_delta, pc.longitude + lon_delta)    
         
-        return format_result(self.conn_manager.query(PC_RANGE_QUERY % (
+        return format_result(self.conn_manager.query(PC_RANGE_QUERY , (
             long_range[0], long_range[1],
             lat_range[0], lat_range[1]
         )))
@@ -109,10 +109,10 @@ class PostalCodeDatabase(object):
         else:
             province = province.upper()
             
-        return format_result(self.conn_manager.query(PC_FIND_QUERY % (city, province)))
+        return format_result(self.conn_manager.query(PC_FIND_QUERY , (city, province)))
         
     def get(self, pc):
-        return format_result(self.conn_manager.query(PC_QUERY % pc))
+        return format_result(self.conn_manager.query(PC_QUERY , (pc,)))
             
     def __getitem__(self, pc):
         pc = self.get(str(pc))
