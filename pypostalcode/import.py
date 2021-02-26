@@ -1,4 +1,3 @@
-
 import sqlite3
 import os
 import csv
@@ -16,8 +15,8 @@ c.execute("CREATE INDEX fsa_index ON PostalCodes(fsa);")
 c.execute("CREATE INDEX city_index ON PostalCodes(city);")
 c.execute("CREATE INDEX province_index ON PostalCodes(province);")
 
-reader = csv.reader(open('ca_postalcodes.csv', "rb"))
-reader.next() # prime it
+reader = csv.reader(open('ca_postalcodes.csv', newline='', encoding='utf-8'))
+next(reader)  # skip the header row
     
 for row in reader:
     fsa, city, province, lat, longt, timezone, dst = row
