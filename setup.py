@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import sys, os
 
-version = '0.3.4'
+version = '0.3.5'
 
 setup(name='pypostalcode',
       version=version,
@@ -13,8 +13,8 @@ setup(name='pypostalcode',
       author='Scott Rodkey',
       author_email='rodkeyscott@gmail.com',
       url='https://github.com/inkjet/pypostalcode',
-      download_url='https://github.com/inkjet/pypostalcode/tarball/0.3.4',	
-      license='GPL',
+      download_url='https://github.com/inkjet/pypostalcode/tarball/0.3.5',
+      license='MIT',
       packages=find_packages(exclude=['ez_setup', 'examples', 'tests']),
       include_package_data=True,
       zip_safe=False,
