@@ -52,6 +52,12 @@ class PostalCode(object):
         self.timezone = data[5]
         self.dst = data[6]
 
+    def __repr__(self):
+        attrs = ["postalcode", "city", "province", "longitude", "latitude", "timezone", "dst"]
+        attrs = ', '.join(f'{a}={repr(getattr(self, a))}' for a in attrs)
+        return f"{self.__class__.__name__}({attrs})"
+
+
 def format_result(postalcodes):
     if len(postalcodes) > 0:
         return [PostalCode(code) for code in postalcodes]
