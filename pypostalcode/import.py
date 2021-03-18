@@ -11,6 +11,7 @@ try:
 except:
     from pyzipcode.settings import db_location
 
+BEFORE_DST_DATE = datetime.datetime(2021, 2, 1)
 DST_DATE = datetime.datetime(2021, 4, 1)
 
 conn = sqlite3.connect(db_location)
@@ -32,7 +33,7 @@ def coords_to_utcoffset_and_isdst(lng, lat):
 
     timezone = pytz.timezone(timezone_name)
     timezone_now = datetime.datetime.now(timezone)
-    offset = timezone_now.utcoffset().total_seconds()/60/60
+    offset = timezone.utcoffset(BEFORE_DST_DATE).total_seconds()/60/60
 
     dst = timezone.dst(DST_DATE).total_seconds()/60/60
 
