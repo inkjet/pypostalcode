@@ -15,7 +15,7 @@ conn = sqlite3.connect(db_location)
 c = conn.cursor()
 
 c.execute("DROP TABLE IF EXISTS PostalCodes;")
-c.execute("CREATE TABLE PostalCodes(fsa VARCHAR(3), city TEXT, province TEXT, longitude DOUBLE, latitude DOUBLE, timezone DOUBLE, dst DOUBLE);")
+c.execute("CREATE TABLE PostalCodes(fsa VARCHAR(3), city TEXT, province TEXT, longitude DOUBLE, latitude DOUBLE, timezone DOUBLE, dst INT);")
 c.execute("CREATE INDEX fsa_index ON PostalCodes(fsa);")
 c.execute("CREATE INDEX city_index ON PostalCodes(city);")
 c.execute("CREATE INDEX province_index ON PostalCodes(province);")
